@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>User Name: {{ user.name }}</h1>
+    <p>internal User ID: {{ user.userId }}</p>
+    <p>Last Logon Date: {{ user.lastLogonDate }}</p>
+    <p>Watch Statistics:</p>
+    <ul>
+      <li>
+        All media items: {{ user.all.cntWatched }} / {{ user.all.cntAll }}
+      </li>
+      <li>
+        Films: {{ user.film.cntWatched }} / {{ user.film.cntAll }}
+      </li>
+      <li>
+        Completed Series: {{ user.series.cntWatched }} / {{ user.series.cntAll }}
+      </li>
+      <li>
+        Completed Seasons: {{ user.seasons.cntWatched }} / {{ user.seasons.cntAll }}
+      </li>
+      <li>
+        Episode: {{ user.episodes.cntWatched }} / {{ user.episodes.cntAll }}
+      </li>
+      <li>
+        MusicFilms: {{ user.musicFilm.cntWatched }} / {{ user.musicFilm.cntAll }}
+      </li>
+    </ul>
+  </div>
+</div>
+<app-user-watched-list [user]="user"></app-user-watched-list>
