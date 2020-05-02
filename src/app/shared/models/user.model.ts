@@ -1,10 +1,16 @@
 export class StatisticCounter {
   public cntAll: number;
   public cntWatched: number;
+  public ratio: number;
 
   constructor(cntAll: number, cntWatched: number) {
     this.cntAll = cntAll;
     this.cntWatched = cntWatched;
+    if (cntWatched > 0) {
+      this.ratio = Math.round((this.cntWatched / this.cntAll) * 100);
+    } else {
+      this.ratio = 0;
+    }
   }
 }
 

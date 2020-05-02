@@ -13,4 +13,8 @@ export class UserDetailComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {}
+
+  getProgressBarWidth(): string {
+    return this.user.all.ratio + ' %';
+  }
 }

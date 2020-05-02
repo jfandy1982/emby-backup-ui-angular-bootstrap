@@ -1,29 +1,79 @@
 <div class="row">
-  <div class="col-xs-12">
-    <h1>User Name: {{ user.name }}</h1>
-    <p>internal User ID: {{ user.userId }}</p>
-    <p>Last Logon Date: {{ user.lastLogonDate }}</p>
-    <p>Watch Statistics:</p>
-    <ul>
-      <li>
-        All media items: {{ user.all.cntWatched }} / {{ user.all.cntAll }}
-      </li>
-      <li>
-        Films: {{ user.film.cntWatched }} / {{ user.film.cntAll }}
-      </li>
-      <li>
-        Completed Series: {{ user.series.cntWatched }} / {{ user.series.cntAll }}
-      </li>
-      <li>
-        Completed Seasons: {{ user.seasons.cntWatched }} / {{ user.seasons.cntAll }}
-      </li>
-      <li>
-        Episode: {{ user.episodes.cntWatched }} / {{ user.episodes.cntAll }}
-      </li>
-      <li>
-        MusicFilms: {{ user.musicFilm.cntWatched }} / {{ user.musicFilm.cntAll }}
-      </li>
-    </ul>
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h6>Benutzer {{ user.name }}</h6>
+      </div>
+      <div class="card-body">
+        <h6>Informationen zum aktuellen Benutzer:</h6>
+        <ul class="list-group small">
+          <!-- Logon Name vs. Real Name; Avater?; event. die internen GUIDs noch ausblenden... -->
+          <li class="list-group-item">interne Benutzer ID: {{ user.userId }}</li>
+          <li class="list-group-item">interne Emby Server ID: {{ user.serverId }}</li>
+          <li class="list-group-item">Die letzte Anmeldung an diesem Emby Server erfolgte am
+            {{ user.lastLogonDate.toLocaleDateString() }} um {{ user.lastLogonDate.toLocaleTimeString() }}
+          </li>
+        </ul>
+        <h6>Watch Statistics:</h6>
+        <ul class="list-group">
+          <li class="list-group-item">
+            All media items ({{ user.all.cntWatched }} / {{ user.all.cntAll }} => {{ user.all.ratio }}):
+            <div class="progress">
+              <!-- style wert ist dynamisch zu berechnen, da dies den Füllstand der ProgressBar bestimmt; hintergrundfarbe geht mit BG-WARNING usw. -->
+              <div class="progress-bar" role="progressbar" aria-valuenow="user.all.cntWatched"
+                aria-valuemax="user.all.cntAll" [ngStyle]="{width: getProgressBarWidth() }">
+                {{ user.all.cntWatched }} / {{ user.all.cntAll }}
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            Films ({{ user.film.cntWatched }} / {{ user.film.cntAll }} => {{ user.film.ratio }}):
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="user.film.cntWatched"
+                aria-valuemax="user.film.cntAll" style="width: 5%">
+                {{ user.film.cntWatched }} / {{ user.film.cntAll }}
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            Completed Series ({{ user.series.cntWatched }} / {{ user.series.cntAll }} => {{ user.series.ratio }}):
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="user.series.cntWatched"
+                aria-valuemax="user.series.cntAll" style="width: 20%">
+                {{ user.series.cntWatched }} / {{ user.series.cntAll }}
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            Completed Seasons ({{ user.seasons.cntWatched }} / {{ user.seasons.cntAll }} => {{ user.seasons.ratio }}):
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="user.seasons.cntWatched"
+                aria-valuemax="user.seasons.cntAll" style="width: 42%">
+                {{ user.seasons.cntWatched }} / {{ user.seasons.cntAll }}
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">Episode: ({{ user.episodes.cntWatched }} / {{ user.episodes.cntAll }} =>
+            {{ user.episodes.ratio }})
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="user.episodes.cntWatched"
+                aria-valuemax="user.episodes.cntAll" style="width: 63%">
+                {{ user.episodes.cntWatched }} / {{ user.episodes.cntAll }}
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            MusicFilms ({{ user.musicFilm.cntWatched }} / {{ user.musicFilm.cntAll }} => {{ user.musicFilm.ratio }}):
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="user.musicFilm.cntWatched"
+                aria-valuemax="user.musicFilm.cntAll" style="width: 88%">
+                {{ user.musicFilm.cntWatched }} / {{ user.musicFilm.cntAll }}
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <app-user-watched-list [user]="user"></app-user-watched-list>
   </div>
 </div>
-<app-user-watched-list [user]="user"></app-user-watched-list>
