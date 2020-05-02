@@ -1,6 +1,7 @@
-<a href="#" class="list-group-item clearfix" (click)="onSelected()">
-  <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ user.userId }}</h4>
-    <p class="list-group-item-text">{{ user.name }}</p>
-  </div>
-</a>
+<button type="button" class="list-group-item list-group-item-action" (click)="onSelected()">
+  {{ user.name }}
+  <br />
+  <span class="small">
+    ({{ user.serverName }})
+  </span>
+</button>

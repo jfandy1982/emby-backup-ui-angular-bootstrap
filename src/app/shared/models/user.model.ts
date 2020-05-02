@@ -38,7 +38,9 @@ export class WatchedItem {
 
 export class User {
   public userId: string;
+  public serverId: string;
   public name: string;
+  public serverName: string;
   public lastLogonDate: Date;
   public all: StatisticCounter;
   public film: StatisticCounter;
@@ -50,7 +52,9 @@ export class User {
 
   constructor(
     userId: string,
+    serverId: string,
     name: string,
+    serverName: string,
     lastLogonDate: Date,
     all: StatisticCounter,
     film: StatisticCounter,
@@ -61,7 +65,9 @@ export class User {
     watchedItems: WatchedItem[]
   ) {
     this.userId = userId;
+    this.serverId = serverId;
     this.name = name;
+    this.serverName = serverName;
     this.lastLogonDate = lastLogonDate;
     this.all = all;
     this.film = film;

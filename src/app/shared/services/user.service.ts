@@ -8,7 +8,9 @@ export class UserService {
   private users: User[] = [
     new User(
       'id-1',
+      'server-1',
       'Anton',
+      'Emby Server 1',
       new Date(),
       new StatisticCounter(10, 1),
       new StatisticCounter(20, 2),
@@ -20,7 +22,9 @@ export class UserService {
     ),
     new User(
       'id-2',
+      'server-1',
       'Berta',
+      'Emby Server 1',
       new Date(),
       new StatisticCounter(6, 6),
       new StatisticCounter(5, 5),
@@ -35,7 +39,9 @@ export class UserService {
     ),
     new User(
       'id-3',
+      'server-1',
       'Charly',
+      'Emby Server 1',
       new Date(),
       new StatisticCounter(0, 0),
       new StatisticCounter(0, 0),
