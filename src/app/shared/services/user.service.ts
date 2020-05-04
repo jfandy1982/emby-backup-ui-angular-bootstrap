@@ -11,7 +11,7 @@ export class UserService {
       'server-1',
       'Anton',
       'Emby Server 1',
-      new Date(),
+      new Date(2020, 1, 1, 13, 14, 15, 99),
       new StatisticCounter(10, 1),
       new StatisticCounter(20, 2),
       new StatisticCounter(30, 3),
@@ -25,7 +25,7 @@ export class UserService {
       'server-1',
       'Berta',
       'Emby Server 1',
-      new Date(),
+      new Date(2019, 9, 14, 21, 35, 59, 99),
       new StatisticCounter(6, 6),
       new StatisticCounter(5, 5),
       new StatisticCounter(4, 4),
@@ -42,7 +42,7 @@ export class UserService {
       'server-1',
       'Charly',
       'Emby Server 1',
-      new Date(),
+      new Date(1970, 0, 1, 0, 0, 0, 0),
       new StatisticCounter(0, 0),
       new StatisticCounter(0, 0),
       new StatisticCounter(0, 0),
@@ -50,6 +50,23 @@ export class UserService {
       new StatisticCounter(0, 0),
       new StatisticCounter(0, 0),
       []
+    ),
+    new User(
+      'id-4',
+      'server-1',
+      'David',
+      'Emby Server 1',
+      new Date(),
+      new StatisticCounter(531, 42),
+      new StatisticCounter(302, 10),
+      new StatisticCounter(350, 25),
+      new StatisticCounter(377, 100),
+      new StatisticCounter(2084, 342),
+      new StatisticCounter(5, 2),
+      [
+        new WatchedItem('id-4', 'media-id-1', false, false, false),
+        new WatchedItem('id-4', 'media-id-2', false, true, false),
+      ]
     ),
   ];
 

@@ -2,76 +2,47 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h6>Benutzer {{ user.name }}</h6>
+        <h6>{{ user.name }}</h6>
+        <p class="small">Die letzte Anmeldung am Emby Server [{{ user.serverName }}] erfolgte am
+          {{ user.lastLogonDate.toLocaleDateString() }} um {{ user.lastLogonDate.toLocaleTimeString() }}.</p>
       </div>
       <div class="card-body">
-        <h6>Informationen zum aktuellen Benutzer:</h6>
-        <ul class="list-group small">
-          <!-- Logon Name vs. Real Name; Avater?; event. die internen GUIDs noch ausblenden... -->
-          <li class="list-group-item">interne Benutzer ID: {{ user.userId }}</li>
-          <li class="list-group-item">interne Emby Server ID: {{ user.serverId }}</li>
-          <li class="list-group-item">Die letzte Anmeldung an diesem Emby Server erfolgte am
-            {{ user.lastLogonDate.toLocaleDateString() }} um {{ user.lastLogonDate.toLocaleTimeString() }}
-          </li>
-        </ul>
-        <h6>Watch Statistics:</h6>
-        <ul class="list-group">
-          <li class="list-group-item">
-            All media items ({{ user.all.cntWatched }} / {{ user.all.cntAll }} => {{ user.all.ratio }}):
-            <div class="progress">
-              <!-- style wert ist dynamisch zu berechnen, da dies den Füllstand der ProgressBar bestimmt; hintergrundfarbe geht mit BG-WARNING usw. -->
-              <div class="progress-bar" role="progressbar" aria-valuenow="user.all.cntWatched"
-                aria-valuemax="user.all.cntAll" [ngStyle]="{width: getProgressBarWidth() }">
-                {{ user.all.cntWatched }} / {{ user.all.cntAll }}
-              </div>
-            </div>
-          </li>
-          <li class="list-group-item">
-            Films ({{ user.film.cntWatched }} / {{ user.film.cntAll }} => {{ user.film.ratio }}):
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="user.film.cntWatched"
-                aria-valuemax="user.film.cntAll" style="width: 5%">
-                {{ user.film.cntWatched }} / {{ user.film.cntAll }}
-              </div>
-            </div>
-          </li>
-          <li class="list-group-item">
-            Completed Series ({{ user.series.cntWatched }} / {{ user.series.cntAll }} => {{ user.series.ratio }}):
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="user.series.cntWatched"
-                aria-valuemax="user.series.cntAll" style="width: 20%">
-                {{ user.series.cntWatched }} / {{ user.series.cntAll }}
-              </div>
-            </div>
-          </li>
-          <li class="list-group-item">
-            Completed Seasons ({{ user.seasons.cntWatched }} / {{ user.seasons.cntAll }} => {{ user.seasons.ratio }}):
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="user.seasons.cntWatched"
-                aria-valuemax="user.seasons.cntAll" style="width: 42%">
-                {{ user.seasons.cntWatched }} / {{ user.seasons.cntAll }}
-              </div>
-            </div>
-          </li>
-          <li class="list-group-item">Episode: ({{ user.episodes.cntWatched }} / {{ user.episodes.cntAll }} =>
-            {{ user.episodes.ratio }})
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="user.episodes.cntWatched"
-                aria-valuemax="user.episodes.cntAll" style="width: 63%">
-                {{ user.episodes.cntWatched }} / {{ user.episodes.cntAll }}
-              </div>
-            </div>
-          </li>
-          <li class="list-group-item">
-            MusicFilms ({{ user.musicFilm.cntWatched }} / {{ user.musicFilm.cntAll }} => {{ user.musicFilm.ratio }}):
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="user.musicFilm.cntWatched"
-                aria-valuemax="user.musicFilm.cntAll" style="width: 88%">
-                {{ user.musicFilm.cntWatched }} / {{ user.musicFilm.cntAll }}
-              </div>
-            </div>
-          </li>
-        </ul>
+        Gesamte Medienbibliothek ({{ user.all.cntWatched }} / {{ user.all.cntAll }}):
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" aria-valuenow="user.all.cntWatched"
+            aria-valuemax="user.all.cntAll" [ngStyle]="getProgressBarWidthAll()">
+          </div>
+        </div>
+        Gesehene Filme ({{ user.film.cntWatched }} / {{ user.film.cntAll }}):
+        <div class="progress">
+          <div class="progress-bar bg-info" role="progressbar" aria-valuenow="user.film.cntWatched"
+            aria-valuemax="user.film.cntAll" [ngStyle]="getProgressBarWidthFilm()">
+          </div>
+        </div>
+        Abgeschlossene Serien ({{ user.series.cntWatched }} / {{ user.series.cntAll }}):
+        <div class="progress">
+          <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="user.series.cntWatched"
+            aria-valuemax="user.series.cntAll" [ngStyle]="getProgressBarWidthSeries()">
+          </div>
+        </div>
+        Abgeschlossene Staffeln aller Serien ({{ user.seasons.cntWatched }} / {{ user.seasons.cntAll }}):
+        <div class="progress">
+          <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="user.seasons.cntWatched"
+            aria-valuemax="user.seasons.cntAll" [ngStyle]="getProgressBarWidthSeasons()">
+          </div>
+        </div>
+        Gesehene Episoden aller Serien ({{ user.episodes.cntWatched }} / {{ user.episodes.cntAll }}):
+        <div class="progress">
+          <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="user.episodes.cntWatched"
+            aria-valuemax="user.episodes.cntAll" [ngStyle]="getProgressBarWidthEpisodes()">
+          </div>
+        </div>
+        Gesehene Musikfilme ({{ user.musicFilm.cntWatched }} / {{ user.musicFilm.cntAll }}):
+        <div class="progress">
+          <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="user.musicFilm.cntWatched"
+            aria-valuemax="user.musicFilm.cntAll" [ngStyle]="getProgressBarWidthMusicFilm()">
+          </div>
+        </div>
       </div>
     </div>
     <app-user-watched-list [user]="user"></app-user-watched-list>
