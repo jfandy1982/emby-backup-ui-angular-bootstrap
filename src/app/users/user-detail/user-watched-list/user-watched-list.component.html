@@ -1,6 +1,28 @@
-<div class="row">
-  <div class="col-xs-12">
-    <app-user-watched-item *ngFor="let watchedItemElement of user.watchedItems" [watchedItem]="watchedItemElement">
-    </app-user-watched-item>
+<div class="row my-md-3">
+  <div class="col">
+    <p class="small">Die hier gelisteten Medien sind bereits vollständig angeschaut. Es werden die Daten des
+      Servers mit den Daten des Snapshots (Backups) verglichen.</p>
+    <p class="small" *ngIf="user.watchedItems.length === 1">
+      Es wird {{ user.watchedItems.length }} Eintrag aufgelistet.</p>
+    <p class="small" *ngIf="user.watchedItems.length !== 1">
+      Es werden {{ user.watchedItems.length }} Einträge aufgelistet.</p>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Media Item ID</th>
+          <th scope="col">Backup misses Watched State</th>
+          <th scope="col">Server misses Watched State</th>
+          <th scope="col">Difference in last Watch Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let watchedItemElement of user.watchedItems">
+          <th scope="row">{{ watchedItemElement.mediaItemId }}</th>
+          <td>{{ watchedItemElement.backupMissesWatchedState }}</td>
+          <td>{{ watchedItemElement.serverMissesWatchedState }}</td>
+          <td>{{ watchedItemElement.serverDiffLastWatchDate }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

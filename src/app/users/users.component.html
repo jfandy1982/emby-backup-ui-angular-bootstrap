@@ -1,8 +1,8 @@
 <div class="row my-md-3">
-  <div class="col-md-4">
+  <div class="col-md-2">
     <app-user-list></app-user-list>
   </div>
-  <div class="col-md-8">
+  <div class="col-md">
     <app-user-detail *ngIf="selectedUser; else infoText" [user]="selectedUser"></app-user-detail>
     <ng-template #infoText>
       <p>Bitte einen Benutzer auswählen!</p>

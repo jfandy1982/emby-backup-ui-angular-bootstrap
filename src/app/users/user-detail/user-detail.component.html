@@ -21,30 +21,30 @@
         </div>
         Abgeschlossene Serien ({{ user.series.cntWatched }} / {{ user.series.cntAll }}):
         <div class="progress">
-          <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="user.series.cntWatched"
+          <div class="progress-bar bg-info" role="progressbar" aria-valuenow="user.series.cntWatched"
             aria-valuemax="user.series.cntAll" [ngStyle]="getProgressBarWidthSeries()">
           </div>
         </div>
         Abgeschlossene Staffeln aller Serien ({{ user.seasons.cntWatched }} / {{ user.seasons.cntAll }}):
         <div class="progress">
-          <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="user.seasons.cntWatched"
+          <div class="progress-bar bg-info" role="progressbar" aria-valuenow="user.seasons.cntWatched"
             aria-valuemax="user.seasons.cntAll" [ngStyle]="getProgressBarWidthSeasons()">
           </div>
         </div>
         Gesehene Episoden aller Serien ({{ user.episodes.cntWatched }} / {{ user.episodes.cntAll }}):
         <div class="progress">
-          <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="user.episodes.cntWatched"
+          <div class="progress-bar bg-info" role="progressbar" aria-valuenow="user.episodes.cntWatched"
             aria-valuemax="user.episodes.cntAll" [ngStyle]="getProgressBarWidthEpisodes()">
           </div>
         </div>
         Gesehene Musikfilme ({{ user.musicFilm.cntWatched }} / {{ user.musicFilm.cntAll }}):
         <div class="progress">
-          <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="user.musicFilm.cntWatched"
+          <div class="progress-bar bg-info" role="progressbar" aria-valuenow="user.musicFilm.cntWatched"
             aria-valuemax="user.musicFilm.cntAll" [ngStyle]="getProgressBarWidthMusicFilm()">
           </div>
         </div>
+        <app-user-watched-list *ngIf="user.watchedItems.length > 0" [user]="user"></app-user-watched-list>
       </div>
     </div>
-    <app-user-watched-list [user]="user"></app-user-watched-list>
   </div>
 </div>

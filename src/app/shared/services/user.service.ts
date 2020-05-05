@@ -66,6 +66,22 @@ export class UserService {
       [
         new WatchedItem('id-4', 'media-id-1', false, false, false),
         new WatchedItem('id-4', 'media-id-2', false, true, false),
+        new WatchedItem('id-4', 'media-id-3', false, false, false),
+        new WatchedItem('id-4', 'media-id-4', false, true, false),
+        new WatchedItem('id-4', 'media-id-5', false, false, false),
+        new WatchedItem('id-4', 'media-id-6', false, true, false),
+        new WatchedItem('id-4', 'media-id-7', false, false, false),
+        new WatchedItem('id-4', 'media-id-8', false, true, false),
+        new WatchedItem('id-4', 'media-id-9', false, false, false),
+        new WatchedItem('id-4', 'media-id-10', false, true, false),
+        new WatchedItem('id-4', 'media-id-11', false, false, false),
+        new WatchedItem('id-4', 'media-id-12', false, true, false),
+        new WatchedItem('id-4', 'media-id-13', false, false, false),
+        new WatchedItem('id-4', 'media-id-14', false, true, false),
+        new WatchedItem('id-4', 'media-id-15', false, false, false),
+        new WatchedItem('id-4', 'media-id-16', false, true, false),
+        new WatchedItem('id-4', 'media-id-17', false, false, false),
+        new WatchedItem('id-4', 'media-id-18', false, true, false),
       ]
     ),
   ];
