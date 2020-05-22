@@ -5,7 +5,10 @@
     </div>
     <div class="card-body text-center">
       <div class="list-group list-group-flush">
-        <app-user-item *ngFor="let userElement of users" [user]="userElement"></app-user-item>
+        <app-user-item
+          *ngFor="let userElement of users"
+          [user]="userElement"
+        ></app-user-item>
       </div>
     </div>
   </div>

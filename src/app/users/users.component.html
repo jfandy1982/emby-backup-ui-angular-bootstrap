@@ -3,7 +3,10 @@
     <app-user-list></app-user-list>
   </div>
   <div class="col-md">
-    <app-user-detail *ngIf="selectedUser; else infoText" [user]="selectedUser"></app-user-detail>
+    <app-user-detail
+      *ngIf="selectedUser; else infoText"
+      [user]="selectedUser"
+    ></app-user-detail>
     <ng-template #infoText>
       <p>Bitte einen Benutzer auswählen!</p>
     </ng-template>

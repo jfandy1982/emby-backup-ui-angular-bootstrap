@@ -1,18 +1,32 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-5 text-center">Willkommen beim Emby Backup</h1>
-    <p class="lead">Hiermit werden die Einstellungen unserer Emby Server konsolidiert.</p>
-    <hr class="my-4">
+    <p class="lead">
+      Hiermit werden die Einstellungen unserer Emby Server konsolidiert.
+    </p>
+    <hr class="my-4" />
     <div>
-      Im Fokus bei diesen &Uuml;berpr&uuml;fungen sind dabei:<br>
+      Im Fokus bei diesen &Uuml;berpr&uuml;fungen sind dabei:<br />
       <ul class="list">
         <li class="list-item">bereits gesehene Medien einzelner Benutzer</li>
-        <li class="list-item">angepasste, optimierte Metadaten dieser Medien</li>
+        <li class="list-item">
+          angepasste, optimierte Metadaten dieser Medien
+        </li>
       </ul>
     </div>
     <div class="row mx-auto">
-      <a class="btn btn-primary btn-sm mx-2" [routerLink]="['/users']" role="button">Benutzer</a>
-      <a class="btn btn-primary btn-sm mx-2" [routerLink]="['/tbd']" role="button">Metadaten</a>
+      <a
+        class="btn btn-primary btn-sm mx-2"
+        [routerLink]="['/users']"
+        role="button"
+        >Benutzer</a
+      >
+      <a
+        class="btn btn-primary btn-sm mx-2"
+        [routerLink]="['/tbd']"
+        role="button"
+        >Metadaten</a
+      >
     </div>
   </div>
 </div>
