@@ -18,7 +18,7 @@ export class UserService {
       new StatisticCounter(40, 4),
       new StatisticCounter(50, 5),
       new StatisticCounter(60, 6),
-      [new WatchedItem('id-1', 'media-id-1', false, false, false)]
+      [new WatchedItem('id-1', 'media-id-1', false, false, false)],
     ),
     new User(
       'id-2',
@@ -35,7 +35,7 @@ export class UserService {
       [
         new WatchedItem('id-2', 'media-id-1', false, false, false),
         new WatchedItem('id-2', 'media-id-2', false, true, false),
-      ]
+      ],
     ),
     new User(
       'id-3',
@@ -49,7 +49,7 @@ export class UserService {
       new StatisticCounter(0, 0),
       new StatisticCounter(0, 0),
       new StatisticCounter(0, 0),
-      []
+      [],
     ),
     new User(
       'id-4',
@@ -82,7 +82,7 @@ export class UserService {
         new WatchedItem('id-4', 'media-id-16', false, true, false),
         new WatchedItem('id-4', 'media-id-17', false, false, false),
         new WatchedItem('id-4', 'media-id-18', false, true, false),
-      ]
+      ],
     ),
   ];
 

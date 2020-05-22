@@ -32,7 +32,7 @@ export class WatchedItem {
     mediaItemId: string,
     backupMissesWatchedState: boolean,
     serverMissesWatchedState: boolean,
-    serverDiffLastWatchDate: boolean
+    serverDiffLastWatchDate: boolean,
   ) {
     this.userId = userId;
     this.mediaItemId = mediaItemId;
@@ -68,7 +68,7 @@ export class User {
     seasons: StatisticCounter,
     episodes: StatisticCounter,
     musicFilm: StatisticCounter,
-    watchedItems: WatchedItem[]
+    watchedItems: WatchedItem[],
   ) {
     this.userId = userId;
     this.serverId = serverId;
