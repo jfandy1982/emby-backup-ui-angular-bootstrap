@@ -15,19 +15,19 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    UsersComponent,
-    UserListComponent,
-    UserItemComponent,
-    UserWatchedListComponent,
-    UserDetailComponent,
-    PageNotFoundComponent,
-    HomeComponent,
-  ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
-  providers: [UserService],
-  bootstrap: [AppComponent],
+	declarations: [
+		AppComponent,
+		HeaderComponent,
+		UsersComponent,
+		UserListComponent,
+		UserItemComponent,
+		UserWatchedListComponent,
+		UserDetailComponent,
+		PageNotFoundComponent,
+		HomeComponent,
+	],
+	imports: [BrowserModule, FormsModule, AppRoutingModule],
+	providers: [UserService],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}
