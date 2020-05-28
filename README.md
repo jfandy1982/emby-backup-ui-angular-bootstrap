@@ -8,15 +8,15 @@ The website uses the REST-based API as implemented in my repository [Emby Backup
 
 ## Motivation
 
-- To be added
+-   To be added
 
 ## Installation
 
-- To be defined
+-   To be defined
 
 ## Usage
 
-- To be defined
+-   To be defined
 
 ## License
 

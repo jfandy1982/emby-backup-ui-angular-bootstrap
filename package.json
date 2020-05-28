@@ -10,7 +10,9 @@
 		"e2e": "ng e2e",
 		"prettier": "prettier \"**/*.{css,js,json,md,html,ts}\"",
 		"format": "npm run prettier -- --write",
-		"validate": "npm run prettier -- --list-different"
+		"eslint": "eslint \"**/*.{js,ts}\"",
+		"eslint:fix": "npm run eslint -- --fix --quiet",
+		"validate": "npm run prettier -- --list-different && npm run eslint"
 	},
 	"private": true,
 	"dependencies": {
@@ -52,6 +54,7 @@
 		"karma-jasmine-html-reporter": "^1.5.3",
 		"lint-staged": "^10.2.6",
 		"prettier": "2.0.5",
+		"prettier-eslint": "^10.1.1",
 		"protractor": "~5.4.4",
 		"ts-node": "~8.9.1",
 		"tslint": "~6.1.2",
@@ -63,8 +66,10 @@
 		}
 	},
 	"lint-staged": {
-		"*.{js,ts}": [
-			"eslint --fix"
+		"**/*.{css,js,json,md,html,ts}": [
+			"npm run format",
+			"npm run eslint:fix",
+			"git add"
 		]
 	}
 }
