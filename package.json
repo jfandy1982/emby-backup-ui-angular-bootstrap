@@ -8,7 +8,10 @@
 		"test": "ng test",
 		"lint": "ng lint",
 		"e2e": "ng e2e",
-		"prettier": "prettier \"**/*.{css,js,json,md,html,ts}\"",
+		"start:dev": "ng serve",
+		"start:qa": "ng serve",
+		"start:prod": "ng serve",
+		"prettier": "prettier \"**/*.{css,js,json,md,html,scss,ts}\"",
 		"format": "npm run prettier -- --write",
 		"eslint": "eslint \"**/*.{js,ts}\"",
 		"eslint:fix": "npm run eslint -- --fix --quiet",
@@ -66,10 +69,12 @@
 		}
 	},
 	"lint-staged": {
-		"**/*.{css,js,json,md,html,ts}": [
+		"**/*.{css,js,json,ts}": [
 			"npm run format",
-			"npm run eslint:fix",
-			"git add"
+			"npm run eslint:fix"
+		],
+		"**/*.{htm,html,md}": [
+			"npm run format"
 		]
 	}
 }

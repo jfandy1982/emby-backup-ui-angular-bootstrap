@@ -1,7 +1,14 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# compiled output
+/dist
+
 # dependencies
 /node_modules
 
 # Github project configuration files
 /.github
+
+# specific files
+/e2e/protractor.conf.js
+karma.conf.js
