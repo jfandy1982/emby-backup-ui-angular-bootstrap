@@ -1,7 +1,7 @@
 {
 	"name": "emby-backup",
 	"version": "1.0.0",
-	"description": "This project is an Anugular Bootstrap UI on top of my personal Emby Backup tool.",
+	"description": "This project is an Angular Bootstrap UI on top of my personal Emby Backup tool.",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
