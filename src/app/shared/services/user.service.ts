@@ -1,5 +1,6 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { User, StatisticCounter, WatchedItem } from '../models/user.model';
+import { EventEmitter, Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { StatisticCounter, User, WatchedItem } from '../models/user.model';
 
 @Injectable()
 export class UserService {
@@ -86,7 +87,9 @@ export class UserService {
 		),
 	];
 
-	getUsers() {
+	getUsers(): User[] {
+		console.log(environment.embyBackupApiHost);
+
 		return this.users.slice();
 	}
 }

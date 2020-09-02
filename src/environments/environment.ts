@@ -4,6 +4,7 @@
 
 export const environment = {
 	production: false,
+	embyBackupApiHost: 'localhost:3000',
 };
 
 /*
