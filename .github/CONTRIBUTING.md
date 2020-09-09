@@ -2,7 +2,7 @@
 
 ## Code of Conduct
 
-Check out the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file to learn about the values we follow.
+Check out the [CODE_OF_CONDUCT.md](https://github.com/jfandy1982/.github/blob/master/CODE_OF_CONDUCT.md) file to learn about the values we follow.
 
 ## How can I contribute
 
