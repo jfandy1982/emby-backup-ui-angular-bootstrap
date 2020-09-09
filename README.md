@@ -20,7 +20,7 @@ The website uses the REST-based API as implemented in my repository [Emby Data C
 
 ## License
 
-Check-out the license in the file [LICENSE](LICENSE) within this repository.
+Check-out the license in the file [LICENSE.md](LICENSE.md) within this repository.
 
 ## Contributing
 
