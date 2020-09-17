@@ -24,4 +24,4 @@ Check-out the license in the file [LICENSE.md](LICENSE.md) within this repositor
 
 ## Contributing
 
-Thanks for taking the time to read this file until the end. As in every project, there need to be at least some kind of guideline, how to collaborate and contribute. Please check out the [CONTRIBUTING.md](.github/CONTRIBUTING.md) to get more details about possibilities to contribute.
+Thanks for taking the time to read this file until the end. As in every project, there need to be at least some kind of guideline, how to collaborate and contribute. Please check out the [CONTRIBUTING.md](https://github.com/jfandy1982/.github/blob/main/CONTRIBUTING.md) to get more details about possibilities to contribute.
