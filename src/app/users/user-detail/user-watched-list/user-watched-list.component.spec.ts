@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UserWatchedListComponent } from './user-watched-list.component';
 
@@ -6,11 +6,13 @@ describe('UserWatchedListComponent', () => {
 	let component: UserWatchedListComponent;
 	let fixture: ComponentFixture<UserWatchedListComponent>;
 
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			declarations: [UserWatchedListComponent],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [UserWatchedListComponent],
+			}).compileComponents();
+		}),
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(UserWatchedListComponent);
